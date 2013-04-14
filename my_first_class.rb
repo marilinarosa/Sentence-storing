@@ -33,7 +33,7 @@ class SentenceUi
 
 	def main_menu()
 		@io.puts("Welcome to sentence store v1")
-		@io.puts("Do you want to (s) store a sentence (r) retrieve a sentence?:")
+		@io.puts("Do you want to (s) store a sentence or (r) retrieve a sentence?:")
 
 		answer = gets().chomp().downcase()
 
@@ -61,15 +61,9 @@ class SentenceUi
 		end
 			puts("Your sentence is #sentence_name{sentence_content}")
 
-# ask store to retrieve sentence given its name
-# give nice error message if we dont know about the sentence
-# display sentence in some format to the user 
-
 		elsif answer == "l"
-
-# list all sentences present
-
-	Dir.foreach("./*.txt")
+			
+			Dir.foreach(".") {|x| puts "Got #{sentence_name}" }
 
 # or tell user if there are none 
 
